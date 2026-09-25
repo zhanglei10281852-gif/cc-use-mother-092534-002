@@ -1,0 +1,9 @@
+[project]
+name = "ccusr-path-policy"
+version = "0.1.0"
+description = "虚拟机文件命名空间、敏感标签、例外租约与策略回放的领域资料"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.unittest]
+start-directory = "tests"

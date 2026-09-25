@@ -1,0 +1,40 @@
+{
+  "project": "虚拟机敏感路径策略服务",
+  "entities": [
+    "namespace",
+    "resource",
+    "policy_version",
+    "access_decision",
+    "exception_lease",
+    "replay_job"
+  ],
+  "states": [
+    "registered",
+    "active",
+    "superseded",
+    "leased",
+    "exhausted",
+    "expired",
+    "replaying",
+    "finished"
+  ],
+  "event_types": [
+    "resource.registered",
+    "policy.published",
+    "access.evaluated",
+    "lease.granted",
+    "lease.consumed",
+    "lease.expired",
+    "replay.started",
+    "replay.finished"
+  ],
+  "time_policy": "ISO 8601 with timezone",
+  "identifier_policy": "同一租户和对象类型内业务标识唯一",
+  "version_policy": "已发布规则与事实通过新版本追加，不覆盖历史",
+  "rules": [
+    "所有路径必须在判定前规范化并验证租户根边界",
+    "链接环和挂载覆盖无法确定时默认拒绝",
+    "例外租约按精确资源与操作计数",
+    "回放只生成差异报告不得重写历史决定"
+  ]
+}

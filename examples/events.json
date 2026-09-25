@@ -1,0 +1,44 @@
+[
+  {
+    "event_id": "evt-02-001",
+    "event_type": "resource.registered",
+    "aggregate_id": "case-02-001",
+    "occurred_at": "2026-09-25T09:00:00+08:00",
+    "actor_id": "operator-01"
+  },
+  {
+    "event_id": "evt-02-002",
+    "event_type": "policy.published",
+    "aggregate_id": "case-02-001",
+    "occurred_at": "2026-09-25T10:00:00+08:00",
+    "actor_id": "reviewer-02"
+  },
+  {
+    "event_id": "evt-02-003",
+    "event_type": "access.evaluated",
+    "aggregate_id": "case-02-001",
+    "occurred_at": "2026-09-25T11:00:00+08:00",
+    "actor_id": "operator-01"
+  },
+  {
+    "event_id": "evt-02-004",
+    "event_type": "lease.granted",
+    "aggregate_id": "case-02-001",
+    "occurred_at": "2026-09-25T12:00:00+08:00",
+    "actor_id": "reviewer-02"
+  },
+  {
+    "event_id": "evt-02-005",
+    "event_type": "lease.consumed",
+    "aggregate_id": "case-02-001",
+    "occurred_at": "2026-09-25T13:00:00+08:00",
+    "actor_id": "operator-01"
+  },
+  {
+    "event_id": "evt-02-006",
+    "event_type": "lease.expired",
+    "aggregate_id": "case-02-001",
+    "occurred_at": "2026-09-25T14:00:00+08:00",
+    "actor_id": "reviewer-02"
+  }
+]
