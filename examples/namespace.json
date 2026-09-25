@@ -1,0 +1,51 @@
+{
+  "tenant_id": "tenant-a",
+  "mounts": [
+    {
+      "prefix": "/",
+      "source": "tenant-volume",
+      "seq": 1,
+      "tree": {
+        "kind": "dir",
+        "owner": "root",
+        "children": {
+          "docs": {
+            "kind": "dir",
+            "owner": "alice",
+            "children": {
+              "report.txt": {"kind": "file", "owner": "alice", "labels": ["internal"]},
+              "secret.txt": {"kind": "file", "owner": "alice", "labels": ["pii", "restricted"]}
+            }
+          },
+          "link-to-report": {"kind": "symlink", "target": "docs/report.txt", "owner": "alice"},
+          "bundle.tar": {
+            "kind": "archive",
+            "owner": "ops",
+            "labels": ["run-record"],
+            "members": {
+              "logs": {
+                "kind": "dir",
+                "owner": "ops",
+                "children": {
+                  "run.log": {"kind": "file", "owner": "ops", "labels": ["run-record"]}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "prefix": "/templates",
+      "source": "system-template",
+      "seq": 2,
+      "tree": {
+        "kind": "dir",
+        "owner": "root",
+        "children": {
+          "base.conf": {"kind": "file", "owner": "root", "labels": ["template"]}
+        }
+      }
+    }
+  ]
+}

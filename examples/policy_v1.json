@@ -1,0 +1,38 @@
+{
+  "version_id": "v1",
+  "published_by": "reviewer-01",
+  "rules": [
+    {
+      "rule_id": "r-template-read",
+      "priority": 10,
+      "effect": "allow",
+      "source": "system-template",
+      "operations": ["read"],
+      "note": "系统模板只读放行"
+    },
+    {
+      "rule_id": "r-pii-deny",
+      "priority": 20,
+      "effect": "deny",
+      "labels_any": ["pii"],
+      "note": "含个人信息的文件默认拒绝"
+    },
+    {
+      "rule_id": "r-docs-read",
+      "priority": 30,
+      "effect": "allow",
+      "path_prefix": "/docs",
+      "operations": ["read"],
+      "note": "普通文档可读"
+    },
+    {
+      "rule_id": "r-runlog-read",
+      "priority": 40,
+      "effect": "allow",
+      "labels_any": ["run-record"],
+      "operations": ["read"],
+      "capability": "cap:read-runlog",
+      "note": "运行记录需要专门能力方可读取"
+    }
+  ]
+}
